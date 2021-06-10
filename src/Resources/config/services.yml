@@ -17,6 +17,16 @@ services:
         tags:
             - { name: maker.command }
 
+    app.maker.twigbootstrap.make_crudmodal:
+        class: Sbyaute\TwigBootstrapMakerBundle\Maker\MakeTwigBootstrapCrudModal
+        arguments: ['@maker.doctrine_helper','@maker.renderer.form_type_renderer']
+        calls:
+            - [setConfiguration, ['%twigbootstrap-maker%']]
+            - [configureCommand, ['@security.command.user_password_encoder', '@?']]
+            - [interact, ['@?', '@?', '@security.command.user_password_encoder']]
+        tags:
+            - { name: maker.command }
+
     app.maker.twigbootstrap.make_controller:
         class:  Sbyaute\TwigBootstrapMakerBundle\Maker\MakeTwigBootstrapController
         # arguments: ['@maker.doctrine_helper','@maker.renderer.form_type_renderer']

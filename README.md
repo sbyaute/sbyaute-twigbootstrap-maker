@@ -1,11 +1,11 @@
-# TwigBootstrapMaker bundle for Symfony 5
+# TwigBootstrapMaker bundle for Symfony 4 & 5
 
 This repository contains TwigBootstrapMaker bundle which helps you create controller skeletons and templates based on [AdminLTE bundle](https://github.com/kevinpapst/AdminLTEBundle), [TwigBootstrap bundle](https://github.com/sbyaute/TwigBootstrapBundle) and [DataTables bundle](https://github.com/omines/datatables-bundle).
 
 ### Minimum requirements
 
-- Symfony 5
-- PHP 7.2
+- Symfony 4.4
+- PHP 7.1
 - Twig 2.0
 - [AdminLTE bundle](https://github.com/kevinpapst/AdminLTEBundle)
 - [TwigBootstrap bundle](https://github.com/sbyaute/TwigBootstrapBundle)
@@ -38,6 +38,7 @@ php bin/console list make:twigbootstrap
 
 make:twigbootstrap:controller  Creates a new controller class
 make:twigbootstrap:crud        Creates TwigBootstrap CRUD for Doctrine entity class
+make:twigbootstrap:crudmodal   Creates TwigBootstrap CRUD (modal mode)for Doctrine entity class
 ```
 
 ## Configuration
