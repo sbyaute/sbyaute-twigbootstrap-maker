@@ -30,7 +30,9 @@ class <?= $class_name ?> extends <?= $parent_class_name; ?><?= "\n" ?>
     /** @var TranslatorInterface */
     private $translator;
 
-    public function __construct(<?= $repository_class_name ?> $<?= $repository_var ?>, EntityManagerInterface $entityManager, TranslatorInterface $translator)
+    public function __construct(<?= $repository_class_name ?> $<?= $repository_var ?>, 
+                                EntityManagerInterface $entityManager, 
+                                TranslatorInterface $translator) 
     {
         $this-><?= $repository_var ?> = $<?= $repository_var ?>;
         $this->entityManager = $entityManager;
@@ -65,10 +67,6 @@ class <?= $class_name ?> extends <?= $parent_class_name; ?><?= "\n" ?>
                 'form'  => $form->createView(),
                 'title' => $this->translator->trans('<?= $entity_var_singular ?>.new.boxtitle', [], '<?= $entity_var_singular ?>'),
                 'requiredFields' => true,
-                'footer' => '
-                    <div class="pull-right"><button type="submit" class="btn btn-success" href="' . $this->generateUrl('<?= $entity_var_singular ?>_index') . '"><i class="fa fa-check"></i> ' . $this->translator->trans('<?= $entity_var_singular ?>.form.btn.valider', [], '<?= $entity_var_singular ?>') . '</button></div>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">' . $this->translator->trans('<?= $entity_var_singular ?>.form.btn.fermer', [], '<?= $entity_var_singular ?>') . '</button>
-                    ',
             ]
         ]);
     }
@@ -122,11 +120,6 @@ class <?= $class_name ?> extends <?= $parent_class_name; ?><?= "\n" ?>
                 'form' => $form->createView(),
                 'title' => $this->translator->trans('<?= $entity_var_singular ?>.edit.boxtitle', [], '<?= $entity_var_singular ?>'),
                 'requiredFields' => true,
-                'info' => $this->translator->trans('<?= $entity_var_singular ?>.edit.boxinfo', [], '<?= $entity_var_singular ?>'),
-                'footer' => '
-                <div class="pull-right"><button type="submit" class="btn btn-success" href="' . $this->generateUrl('<?= $entity_var_singular ?>_index') . '"><i class="fa fa-check"></i> ' . $this->translator->trans('<?= $entity_var_singular ?>.edit.btn.mettreajour', [], '<?= $entity_var_singular ?>') . '</button></div>
-                <button type="button" class="btn btn-default" data-dismiss="modal">' . $this->translator->trans('<?= $entity_var_singular ?>.form.btn.fermer', [], '<?= $entity_var_singular ?>') . '</button>
-                ',
             ],
         ]);
     }
