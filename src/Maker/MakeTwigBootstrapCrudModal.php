@@ -164,6 +164,25 @@ class MakeTwigBootstrapCrudModal extends AbstractMaker
                 'translation_domain' => '".$entityVarSingular."' ";
         }
 
+        $name='btn_fermer';
+        $FormFields[$name]['type'] = SubmitType::class;
+        $FormFields[$name]['options_code'] = "                'label' => '".$entityVarSingular.".".$name."',
+                'translation_domain' => '".$entityVarSingular."', 
+                'label_html' => true,
+                'attr' => [
+                    'class' => 'btn btn-default',
+                    'data-dismiss' => \"modal\",
+                ]";
+
+        $name='btn_valider';
+        $FormFields[$name]['type'] = SubmitType::class;
+        $FormFields[$name]['options_code'] = "                'label' => '".$entityVarSingular.".".$name."',
+                'translation_domain' => '".$entityVarSingular."', 
+                'label_html' => true,
+                'attr' => [
+                    'class' => 'btn btn-success',
+                ]";
+
         $this->formTypeRenderer->render(
             $formClassDetails,
             //$entityDoctrineDetails->getFormFields(),
