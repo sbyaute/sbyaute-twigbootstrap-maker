@@ -14,18 +14,29 @@
                         <div class="form-group"><div class="col-sm-9"></div><div class="col-sm-3 text-warning">* Champs obligatoires</div></div>
                     {% endif %}
                     {% if modal.form is defined and modal.form is not empty %}
-                        {{ form_widget(modal.form) }}
+{#                        {{ form_widget(modal.form) }}#}
+                        {% for row in modal.form %}
+                            {% if row.vars.clicked is not defined %}
+                                {{ form_row(row) }}
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
+
                     {% if modal.message is defined and modal.message is not empty %}
                         {{ modal.message | raw }}
                     {% endif %}
-
                 {% endblock %}
 
                 {% block box_footer %}
-                    {% if modal.footer is defined and modal.footer is not empty %}
-                        {{ modal.footer | raw }}
-                    {% endif %}
+                    <div class="row">
+                        {% for row in modal.form %}
+                            {% if row.vars.clicked is defined %}
+                            <div class="col-sm-6 {% if row.vars.name is not same as('btn_fermer') %} text-right {% endif %}">
+                                {{ form_widget(row) }}
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 {% endblock %}
 
                 {% block box_after %}
