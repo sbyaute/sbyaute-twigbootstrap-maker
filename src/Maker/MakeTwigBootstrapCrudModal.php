@@ -165,7 +165,7 @@ class MakeTwigBootstrapCrudModal extends AbstractMaker
         }
 
         $name='btn_fermer';
-        $FormFields[$name]['type'] = SubmitType::class;
+        $FormFields[$name]['type'] = \Symfony\Component\Form\Extension\Core\Type\SubmitType::class;
         $FormFields[$name]['options_code'] = "                'label' => '".$entityVarSingular.".".$name."',
                 'translation_domain' => '".$entityVarSingular."', 
                 'label_html' => true,
@@ -175,7 +175,7 @@ class MakeTwigBootstrapCrudModal extends AbstractMaker
                 ]";
 
         $name='btn_valider';
-        $FormFields[$name]['type'] = SubmitType::class;
+        $FormFields[$name]['type'] = \Symfony\Component\Form\Extension\Core\Type\SubmitType::class;
         $FormFields[$name]['options_code'] = "                'label' => '".$entityVarSingular.".".$name."',
                 'translation_domain' => '".$entityVarSingular."', 
                 'label_html' => true,
