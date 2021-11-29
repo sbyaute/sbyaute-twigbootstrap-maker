@@ -8,7 +8,7 @@
 <?= $entity_class_name ?>.edit.btn.mettreajour: 'Mettre à jour'
 <?= $entity_class_name ?>.edit.pagetitle: 'Editer un <?= $entity_class_name ?>'
 <?= $entity_class_name ?>.index.boxtitle: 'Liste des <?= $entity_class_name ?>s'
-<?= $entity_class_name ?>.index.btn.ajouter: Ajouter
+<?= $entity_class_name ?>.index.btn.ajouter: 'Ajouter'
 <?= $entity_class_name ?>.index.pagetitle: 'Liste des <?= $entity_class_name ?>s'
 <?= $entity_class_name ?>.index.subtitle: ''
 <?= $entity_class_name ?>.index.btn.voir: ''
